@@ -42,15 +42,22 @@ ros-foxy-image-transport ros-foxy-image-publisher
 
 Instead of standard cloning, follow these steps to set up the specialized workspace provided for this hardware: 
 
-1. 
-**Copy Workspace**: Unzip the provided files and move the `ascam_ros2_ws` directory to your home (root) directory. 
+1. **Copy Workspace**: Unzip the provided files and move the `ascam_ros2_ws` directory to your home (root) directory. 
+Create a new ROS 2 workspace and clone the ascamera package:
 
+```bash
+
+mkdir -p ~/ascam_ros2_ws/srccd ~/ascam_ros2_ws/src
+
+git clone https://github.com/BhavyaPatel9/ascamera.git ascamera
+
+```
 
 2. **Navigate and Build**:
 ```bash
-[cite_start]cd ~/ascam_ros2_ws 
-[cite_start]chmod a+x build.sh 
-[cite_start]./build.sh 
+cd ~/ascam_ros2_ws 
+chmod a+x build.sh 
+./build.sh 
 
 ```
 
@@ -139,7 +146,7 @@ Ensure these parameters are correctly mapped within the `ascamera_node`:
 To start the camera node, open a new terminal and run: 
 
 ```bash
-[cite_start]ros2 launch ascamera hp60c.launch.py 
+ros2 launch ascamera hp60c.launch.py 
 
 ```
 
